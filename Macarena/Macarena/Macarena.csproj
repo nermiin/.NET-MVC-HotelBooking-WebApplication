@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -7,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F2A522CB-8BD1-4B52-94A4-3BAD8DC7C5AD}</ProjectGuid>
+    <ProjectGuid>{92B00DD5-EB96-413D-8708-77DEA90A78AE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Macarena</RootNamespace>
-    <AssemblyName>Macarena</AssemblyName>
+    <RootNamespace>MACARENA</RootNamespace>
+    <AssemblyName>MACARENA</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -23,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -88,11 +90,216 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\blog_post_responsive.css" />
+    <Content Include="Content\css\blog_post_styles.css" />
+    <Content Include="Content\css\blog_responsive.css" />
+    <Content Include="Content\css\blog_styles.css" />
+    <Content Include="Content\css\contact_responsive.css" />
+    <Content Include="Content\css\contact_styles.css" />
+    <Content Include="Content\css\elements_responsive.css" />
+    <Content Include="Content\css\elements_styles.css" />
+    <Content Include="Content\css\main_styles.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\services_responsive.css" />
+    <Content Include="Content\css\services_styles.css" />
+    <Content Include="Content\css\Stilim_signin.css" />
+    <Content Include="Content\css\Stillerim.css" />
+    <Content Include="Content\images\about_background.jpg" />
+    <Content Include="Content\images\about_shapes.png" />
+    <Content Include="Content\images\arrow_left.svg" />
+    <Content Include="Content\images\arrow_right.svg" />
+    <Content Include="Content\images\arrow_right_red.svg" />
+    <Content Include="Content\images\blog_1.jpg" />
+    <Content Include="Content\images\blog_2.jpg" />
+    <Content Include="Content\images\blog_3.jpg" />
+    <Content Include="Content\images\blog_background.jpg" />
+    <Content Include="Content\images\blog_post_comment_1.jpg" />
+    <Content Include="Content\images\blog_post_comment_2.jpg" />
+    <Content Include="Content\images\card_1.jpg" />
+    <Content Include="Content\images\card_2.jpg" />
+    <Content Include="Content\images\card_3.jpg" />
+    <Content Include="Content\images\client_1.png" />
+    <Content Include="Content\images\client_2.png" />
+    <Content Include="Content\images\client_3.png" />
+    <Content Include="Content\images\client_4.png" />
+    <Content Include="Content\images\client_5.png" />
+    <Content Include="Content\images\contact_background.jpg" />
+    <Content Include="Content\images\contact_shape.png" />
+    <Content Include="Content\images\gallery_1.jpg" />
+    <Content Include="Content\images\gallery_1_large.jpg" />
+    <Content Include="Content\images\gallery_2.jpg" />
+    <Content Include="Content\images\gallery_2_large.jpg" />
+    <Content Include="Content\images\gallery_3.jpg" />
+    <Content Include="Content\images\gallery_3_large.jpg" />
+    <Content Include="Content\images\gallery_4.jpg" />
+    <Content Include="Content\images\gallery_4_large.jpg" />
+    <Content Include="Content\images\gallery_5.jpg" />
+    <Content Include="Content\images\gallery_5_large.jpg" />
+    <Content Include="Content\images\gallery_6.jpg" />
+    <Content Include="Content\images\gallery_6_large.jpg" />
+    <Content Include="Content\images\icon_1.svg" />
+    <Content Include="Content\images\icon_2.svg" />
+    <Content Include="Content\images\icon_3.svg" />
+    <Content Include="Content\images\icon_4.svg" />
+    <Content Include="Content\images\icon_5.svg" />
+    <Content Include="Content\images\icon_6.svg" />
+    <Content Include="Content\images\img\fifa\1.jpg" />
+    <Content Include="Content\images\img\fifa\2.jpg" />
+    <Content Include="Content\images\img\fifa\3.jpg" />
+    <Content Include="Content\images\img\fifa\4.jpg" />
+    <Content Include="Content\images\img\fifa\SorteoMundialDeClubes_2016.jpg" />
+    <Content Include="Content\images\img\haberler\1.jpg" />
+    <Content Include="Content\images\img\haberler\2.jpg" />
+    <Content Include="Content\images\img\haberler\3.jpg" />
+    <Content Include="Content\images\img\haberler\gazete.jpg" />
+    <Content Include="Content\images\img\Spain\354497.jpg" />
+    <Content Include="Content\images\img\Spain\545231.jpg" />
+    <Content Include="Content\images\img\Spain\598366.jpg" />
+    <Content Include="Content\images\img\Spain\688197.jpg" />
+    <Content Include="Content\images\img\Spain\bayrak.png" />
+    <Content Include="Content\images\img\Spain\bob-leferink-97766-unsplash.jpg" />
+    <Content Include="Content\images\img\Spain\cordoba.jpg" />
+    <Content Include="Content\images\img\Spain\greta-scholderle-moller-110601-unsplash.jpg" />
+    <Content Include="Content\images\img\Spain\Madrid.jpg" />
+    <Content Include="Content\images\img\Spain\map.gif" />
+    <Content Include="Content\images\img\Spain\paul-trienekens-421463-unsplash.jpg" />
+    <Content Include="Content\images\img\Spain\Seville-Spain-buildings-water_1920x1200.jpg" />
+    <Content Include="Content\images\img\Spain\Spain.jpg" />
+    <Content Include="Content\images\img\Spain\uçak.jpg" />
+    <Content Include="Content\images\img\Spain\willian-justen-de-vasconcellos-556152-unsplash.jpg" />
+    <Content Include="Content\images\main_slider_1.jpg" />
+    <Content Include="Content\images\main_slider_shapes.png" />
+    <Content Include="Content\images\map_marker.png" />
+    <Content Include="Content\images\menu_shapes.png" />
+    <Content Include="Content\images\pic_box_1.jpg" />
+    <Content Include="Content\images\pic_box_2.jpg" />
+    <Content Include="Content\images\pic_box_3.jpg" />
+    <Content Include="Content\images\popular_1.jpg" />
+    <Content Include="Content\images\popular_2.jpg" />
+    <Content Include="Content\images\popular_3.jpg" />
+    <Content Include="Content\images\recent_1.jpg" />
+    <Content Include="Content\images\recent_2.jpg" />
+    <Content Include="Content\images\recent_3.jpg" />
+    <Content Include="Content\images\recent_4.jpg" />
+    <Content Include="Content\images\search.png" />
+    <Content Include="Content\images\services_background.jpg" />
+    <Content Include="Content\images\services_page_shapes.png" />
+    <Content Include="Content\images\services_parallax.jpg" />
+    <Content Include="Content\images\services_shapes.png" />
+    <Content Include="Content\images\services_shape_left.png" />
+    <Content Include="Content\images\sidebar_slider_1.jpg" />
+    <Content Include="Content\images\sidebar_slider_2.jpg" />
+    <Content Include="Content\images\sidebar_slider_3.jpg" />
+    <Content Include="Content\images\signiture.png" />
+    <Content Include="Content\images\test_user.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="plugins\colorbox\colorbox.css" />
+    <Content Include="plugins\colorbox\images\border.png" />
+    <Content Include="plugins\colorbox\images\controls.png" />
+    <Content Include="plugins\colorbox\images\loading.gif" />
+    <Content Include="plugins\colorbox\images\loading_background.png" />
+    <Content Include="plugins\colorbox\images\overlay.png" />
+    <Content Include="plugins\colorbox\jquery.colorbox-min.js" />
+    <Content Include="plugins\easing\easing.js" />
+    <Content Include="plugins\fontawesome-free-5.0.1\css\fontawesome-all.css" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.svg" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-regular-400.svg" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.svg" />
+    <Content Include="plugins\greensock\animation.gsap.min.js" />
+    <Content Include="plugins\greensock\ScrollToPlugin.min.js" />
+    <Content Include="plugins\greensock\TimelineMax.min.js" />
+    <Content Include="plugins\greensock\TweenMax.min.js" />
+    <Content Include="plugins\js-flickr-gallery-1.24\js-flickr-gallery.css" />
+    <Content Include="plugins\js-flickr-gallery-1.24\js-flickr-gallery.js" />
+    <Content Include="plugins\js-flickr-gallery-1.24\js-flickr-gallery.min.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="plugins\progressbar\progressbar.min.js" />
+    <Content Include="plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="plugins\scrollTo\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.eot" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.ttf" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.woff" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-brands-400.woff2" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-regular-400.eot" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-regular-400.ttf" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-regular-400.woff" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-regular-400.woff2" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.eot" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.ttf" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff" />
+    <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff2" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\js\angular.js" />
+    <Content Include="Scripts\js\angular_Kodum.js" />
+    <Content Include="Scripts\js\blog_custom.js" />
+    <Content Include="Scripts\js\blog_post_custom.js" />
+    <Content Include="Scripts\js\bootstrap_transition.js" />
+    <Content Include="Scripts\js\contact_custom.js" />
+    <Content Include="Scripts\js\custom.js" />
+    <Content Include="Scripts\js\elements_custom.js" />
+    <Content Include="Scripts\js\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\js\kodum.js" />
+    <Content Include="Scripts\js\services_custom.js" />
+    <Content Include="Scripts\js\Slider.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,6 +308,15 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Spor.cshtml" />
+    <Content Include="Views\Home\Turizim.cshtml" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,14 +326,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
@@ -126,9 +348,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63281</DevelopmentServerPort>
+          <DevelopmentServerPort>61866</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63281/</IISUrl>
+          <IISUrl>http://localhost:61866/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
