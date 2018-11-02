@@ -13,14 +13,19 @@ namespace MACARENA.Controllers
         {
             return View();
         }
+        [Route("about")]
         public ActionResult About()
         {
             return View();
         }
+
+        [Route("spor")]
         public ActionResult Spor()
         {
             return View();
         }
+
+        [Route("turizm")]
         public ActionResult Turizim()
         {
             return View();
