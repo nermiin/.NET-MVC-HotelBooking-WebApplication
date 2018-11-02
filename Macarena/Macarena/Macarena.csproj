@@ -59,6 +59,8 @@
     <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -205,6 +207,16 @@
     <Content Include="Content\images\signiture.png" />
     <Content Include="Content\images\test_user.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\ADO\SpainDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpainDB.edmx</DependentUpon>
+      <LastGenOutput>SpainDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ADO\SpainDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpainDB.edmx</DependentUpon>
+      <LastGenOutput>SpainDB.cs</LastGenOutput>
+    </Content>
     <Content Include="plugins\colorbox\colorbox.css" />
     <Content Include="plugins\colorbox\images\border.png" />
     <Content Include="plugins\colorbox\images\controls.png" />
@@ -254,6 +266,13 @@
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.ttf" />
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff" />
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="Models\ADO\SpainDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpainDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ADO\SpainDB.edmx.diagram">
+      <DependentUpon>SpainDB.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -296,6 +315,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ADO\City.cs">
+      <DependentUpon>SpainDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO\Hotel.cs">
+      <DependentUpon>SpainDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO\SpainDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpainDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO\SpainDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpainDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO\SpainDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpainDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -328,10 +368,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
