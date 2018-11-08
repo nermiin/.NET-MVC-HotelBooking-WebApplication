@@ -10,107 +10,107 @@ using MACARENA.Models.ADO;
 
 namespace MACARENA.Controllers
 {
-    public class CitiesController : Controller
+    public class UsersController : Controller
     {
         private SpainDb db = new SpainDb();
 
-        // GET: Cities
+        // GET: Users
         public ActionResult Index()
         {
-            return View(db.Cities.ToList());
+            return View(db.Users.ToList());
         }
 
-        // GET: Cities/Details/5
+        // GET: Users/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(user);
         }
 
-        // GET: Cities/Create
+        // GET: Users/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Cities/Create
+        // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] City city)
+        public ActionResult Create([Bind(Include = "UserID,UserName,Password,IsAdmin")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Cities.Add(city);
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(city);
+            return View(user);
         }
 
-        // GET: Cities/Edit/5
+        // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(user);
         }
 
-        // POST: Cities/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] City city)
+        public ActionResult Edit([Bind(Include = "UserID,UserName,Password,IsAdmin")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(city).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(city);
+            return View(user);
         }
 
-        // GET: Cities/Delete/5
+        // GET: Users/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            City city = db.Cities.Find(id);
-            if (city == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(city);
+            return View(user);
         }
 
-        // POST: Cities/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            City city = db.Cities.Find(id);
-            db.Cities.Remove(city);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

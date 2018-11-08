@@ -18,12 +18,7 @@ namespace MACARENA.Controllers
         {
             return View();
         }
-
-        [Route("spor")]
-        public ActionResult Spor()
-        {
-            return View();
-        }
+      
 
         [Route("turizm")]
         public ActionResult Turizim()

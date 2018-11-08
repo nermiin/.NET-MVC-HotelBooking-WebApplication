@@ -12,7 +12,7 @@ namespace MACARENA.Controllers
 {
     public class HotelsController : Controller
     {
-        private SpainDbADO db = new SpainDbADO();
+        private SpainDb db = new SpainDb();
 
         // GET: Hotels
         public ActionResult Index()

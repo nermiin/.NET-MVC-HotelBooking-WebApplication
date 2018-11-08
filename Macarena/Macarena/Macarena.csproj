@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +47,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -56,8 +61,16 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="OptimizationHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Optimization.Helper.0.1.2\lib\net45\OptimizationHelper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -75,6 +88,10 @@
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
@@ -95,6 +112,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure">
@@ -207,14 +228,19 @@
     <Content Include="Content\images\signiture.png" />
     <Content Include="Content\images\test_user.jpg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\ADO\SpainDB.Context.tt">
+    <Content Include="Models\ADO\MACARENA.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SpainDB.edmx</DependentUpon>
-      <LastGenOutput>SpainDB.Context.cs</LastGenOutput>
+      <DependentUpon>MACARENA.edmx</DependentUpon>
+      <LastGenOutput>MACARENA.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ADO\MACARENA.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MACARENA.edmx</DependentUpon>
+      <LastGenOutput>MACARENA.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ADO\SpainDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SpainDB.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SpainDB.cs</LastGenOutput>
     </Content>
     <Content Include="plugins\colorbox\colorbox.css" />
@@ -266,12 +292,16 @@
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.ttf" />
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff" />
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="Models\ADO\MACARENA.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MACARENA.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Models\ADO\SpainDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SpainDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ADO\SpainDB.edmx.diagram">
-      <DependentUpon>SpainDB.edmx</DependentUpon>
+    <Content Include="Models\ADO\MACARENA.edmx.diagram">
+      <DependentUpon>MACARENA.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -314,29 +344,43 @@
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ADO\City.cs">
-      <DependentUpon>SpainDB.tt</DependentUpon>
+      <DependentUpon>MACARENA.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ADO\Hotel.cs">
-      <DependentUpon>SpainDB.tt</DependentUpon>
+      <DependentUpon>MACARENA.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ADO\SpainDB.Context.cs">
+    <Compile Include="Models\ADO\MACARENA.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SpainDB.Context.tt</DependentUpon>
+      <DependentUpon>MACARENA.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO\MACARENA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MACARENA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO\MACARENA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MACARENA.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ADO\SpainDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SpainDB.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\ADO\SpainDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SpainDB.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Models\ADO\User.cs">
+      <DependentUpon>MACARENA.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -370,6 +414,11 @@
     <Content Include="Views\Hotels\Details.cshtml" />
     <Content Include="Views\Hotels\Edit.cshtml" />
     <Content Include="Views\Hotels\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
