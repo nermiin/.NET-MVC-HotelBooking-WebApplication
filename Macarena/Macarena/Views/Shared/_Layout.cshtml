@@ -1,22 +1,21 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization;
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewBag.Title - Macarena </title>
-	
-	<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
-	<link href="~/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-	<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-	<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
-	<link rel="stylesheet" type="text/css" href="~/plugins/js-flickr-gallery-1.24/js-flickr-gallery.css" />
-	<link rel="stylesheet" type="text/css" href="~/Content/css/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css">
-	<link rel="stylesheet" type="text/css" href="~/Content/css/styles/blog_styles.css">
-	<link rel="stylesheet" type="text/css" href="~/Content/css/styles/blog_responsive.css">
-	<link rel="stylesheet" type="text/css" href="~/Content/css/Stillerim.css">
-
+	@Styles.Render("~/Content/bootstrap.min.css");
+	@Styles.Render("~/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css");
+	@Styles.Render("~/plugins/OwlCarousel2-2.2.1/owl.carousel.css");
+	@Styles.Render("~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css");
+	@Styles.Render("~/plugins/OwlCarousel2-2.2.1/animate.css");
+	@Styles.Render("~/plugins/js-flickr-gallery-1.24/js-flickr-gallery.css");
+	@Styles.Render("~/Content/css/main_styles.css");
+	@Styles.Render("~/Content/css/responsive.css");
+	@Styles.Render("~/Content/css/styles/blog_styles.css");
+	@Styles.Render("~/Content/css/styles/blog_responsive.css");
+	@Styles.Render("~/Content/css/Stillerim.css");
 </head>
 <body>
 	@Html.Partial("_Header")
@@ -25,23 +24,22 @@
 	</div>
 	@Html.Partial("_Footer")
 
-	<script src="~/Scripts/js/jquery-3.2.1.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<script src="~/Scripts/umd/popper.js"></script>
-	<script src="~/Scripts/bootstrap.min.js"></script>
-	<script src="~/plugins/greensock/TweenMax.min.js"></script>
-	<script src="~/plugins/greensock/TimelineMax.min.js"></script>
-	<script src="~/plugins/scrollmagic/ScrollMagic.min.js"></script>
-	<script src="~/plugins/greensock/animation.gsap.min.js"></script>
-	<script src="~/plugins/greensock/ScrollToPlugin.min.js"></script>
-	<script src="~/plugins/progressbar/progressbar.min.js"></script>
-	<script src="~/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-	<script src="~/plugins/easing/easing.js"></script>
-	<script src="~/Scripts/js/elements_custom.js"></script>
-	<script src="~/Scripts/js/custom.js"></script>
-	<script src="~/Scripts/js/Slider.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script src="~/Scripts/js/kodum.js"></script>
-
+	@Scripts.Render("~/Scripts/js/jquery-3.2.1.min.js");
+	@Scripts.Render("https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js");
+	@Scripts.Render("~/Scripts/umd/popper.js");
+	@Scripts.Render("~/Scripts/bootstrap.min.js");
+	@Scripts.Render("~/plugins/greensock/TweenMax.min.js");
+	@Scripts.Render("~/plugins/greensock/TimelineMax.min.js");
+	@Scripts.Render("~/plugins/scrollmagic/ScrollMagic.min.js");
+	@Scripts.Render("~/plugins/greensock/animation.gsap.min.js");
+	@Scripts.Render("~/plugins/greensock/ScrollToPlugin.min.js");
+	@Scripts.Render("~/plugins/progressbar/progressbar.min.js");
+	@Scripts.Render("~/plugins/OwlCarousel2-2.2.1/owl.carousel.js");
+	@Scripts.Render("~/plugins/easing/easing.js");
+	@Scripts.Render("~/Scripts/js/elements_custom.js");
+	@Scripts.Render("~/Scripts/js/custom.js");
+	@Scripts.Render("~/Scripts/js/Slider.js");
+	@Scripts.Render("https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js");
+	@Scripts.Render("~/Scripts/js/kodum.js");
 </body>
 </html>
