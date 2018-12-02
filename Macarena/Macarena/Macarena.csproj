@@ -228,21 +228,6 @@
     <Content Include="Content\images\signiture.png" />
     <Content Include="Content\images\test_user.jpg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\ADO\MACARENA.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MACARENA.edmx</DependentUpon>
-      <LastGenOutput>MACARENA.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ADO\MACARENA.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MACARENA.edmx</DependentUpon>
-      <LastGenOutput>MACARENA.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ADO\SpainDB.tt">
-      <DependentUpon>SpainDB.edmx</DependentUpon>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SpainDB.cs</LastGenOutput>
-    </Content>
     <Content Include="plugins\colorbox\colorbox.css" />
     <Content Include="plugins\colorbox\images\border.png" />
     <Content Include="plugins\colorbox\images\controls.png" />
@@ -292,17 +277,6 @@
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.ttf" />
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff" />
     <Content Include="plugins\fontawesome-free-5.0.1\webfonts\fa-solid-900.woff2" />
-    <EntityDeploy Include="Models\ADO\MACARENA.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MACARENA.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <EntityDeploy Include="Models\ADO\SpainDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SpainDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ADO\MACARENA.edmx.diagram">
-      <DependentUpon>MACARENA.edmx</DependentUpon>
-    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -343,46 +317,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HotelsController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ADO\City.cs">
-      <DependentUpon>MACARENA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ADO\Hotel.cs">
-      <DependentUpon>MACARENA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ADO\MACARENA.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MACARENA.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ADO\MACARENA.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MACARENA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ADO\MACARENA.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MACARENA.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ADO\SpainDB.cs">
-      <DependentUpon>SpainDB.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Models\ADO\SpainDB.Designer.cs">
-      <DependentUpon>SpainDB.edmx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Models\ADO\User.cs">
-      <DependentUpon>MACARENA.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -406,21 +343,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Cities\Create.cshtml" />
-    <Content Include="Views\Cities\Delete.cshtml" />
-    <Content Include="Views\Cities\Details.cshtml" />
-    <Content Include="Views\Cities\Edit.cshtml" />
-    <Content Include="Views\Cities\Index.cshtml" />
-    <Content Include="Views\Hotels\Create.cshtml" />
-    <Content Include="Views\Hotels\Delete.cshtml" />
-    <Content Include="Views\Hotels\Details.cshtml" />
-    <Content Include="Views\Hotels\Edit.cshtml" />
-    <Content Include="Views\Hotels\Index.cshtml" />
-    <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
-    <Content Include="Views\Users\Details.cshtml" />
-    <Content Include="Views\Users\Edit.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -430,6 +352,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
