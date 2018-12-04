@@ -17,6 +17,7 @@ namespace MACARENA.Controllers
                 return View(db.UserAccount.ToList());
             }
         }
+        //-------------------------------------------------------------------------------------------------------------------------------------------
         public ActionResult Register()
         {
             return View();
@@ -33,11 +34,11 @@ namespace MACARENA.Controllers
                     db.SaveChanges();
                 }
                 ModelState.Clear();
-                ViewBag.Message = account.FirstName + "     " + account.LastName + "Sucssesfuly registerd";
+                ViewBag.Message =" Welcome  "+ account.FirstName + "     " + account.LastName + " you are sucssesfuly registerd";
             }
             return View();
         }
-
+        //------------------------------------------------------------------------------------------------------------------------------------------
         public ActionResult Login()
         {
             return View();
@@ -62,7 +63,7 @@ namespace MACARENA.Controllers
             }
                 return View();
         }
-
+        //---------------------------------------------------------------------------------------------------------------------
         public ActionResult LoggedIn()
         {
             if (Session["UserId"] != null)

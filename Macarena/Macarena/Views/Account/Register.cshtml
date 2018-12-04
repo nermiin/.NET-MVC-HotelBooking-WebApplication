@@ -14,6 +14,7 @@
 		<h4>UserAccount</h4>
 		<hr />
 		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
 		<div class="form-group">
 			@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
@@ -69,7 +70,19 @@
 		</div>
 	</div>
 }
+@if (ViewBag.Message != null)
+{
+	<div class="form-group">
+		<div class="col-md-10">
+			@ViewBag.Message;
+		</div>
+	</div>
+}
 
 <div>
 	@Html.ActionLink("If you have account press here to Login", "Login")
+</div>
+
+<div>
+	@Html.ActionLink("Back to list", "Index")
 </div>
