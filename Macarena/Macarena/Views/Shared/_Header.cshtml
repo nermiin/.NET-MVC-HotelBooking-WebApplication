@@ -1,4 +1,4 @@
-﻿<div class="super_container">
+﻿
 	<!-- Header -->
 
 	<header class="header d-flex flex-row justify-content-end align-items-center">
@@ -13,18 +13,20 @@
 		<!-- Main Navigation -->
 		<nav class="main_nav justify-self-end">
 			<ul class="nav_items">
-				<li class="active"><a href="/"><span>Ana Sayfa</span></a></li>
-				<li><a href="/turizm"><span>Turistik yerler </span></a></li>
-				<li><a href="/about"><span>Hakkımızda</span></a></li>
-				<li>
-					<button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menü</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="#">Üye Ol</a>
-						<a class="dropdown-item" href="#">Giriş</a>
-						<a class="dropdown-item" href="#">Panel</a>
-					</div>
+				<li>@Html.ActionLink("Home", "Index", "Home")</li>
+				<li>@Html.ActionLink("Turizim", "Turizim", "Home")</li>
+				<li>@Html.ActionLink("About", "About", "Home")</li>
+				<li class=" dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+						<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+					</ul>
 				</li>
 			</ul>
+			@Html.Partial("_LoginPartial")
 		</nav>
 
 		<!-- Hamburger -->
@@ -45,7 +47,7 @@
 				<li><a href="/"><span><span>A</span>Ana Sayfa</span></a></li>
 				<li><a href="turizm"><span><span>T</span>Turizim</span></a></li>
 				<li><a href="about"><span><span>S</span>Hakkımızda</span></a></li>
-				<li><a href="sign_in.html"><span><span>K</span>Kullanıcı Giriş</span></a></li>
+				<li><a href="logIn"><span><span>K</span>Kullanıcı Giriş</span></a></li>
 			</ul>
 		</nav>
 		<div class="fs_social_container d-flex flex-row justify-content-end align-items-center">
