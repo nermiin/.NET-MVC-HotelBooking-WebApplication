@@ -21,7 +21,7 @@ namespace MACARENA.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("AccountConnection", throwIfV1Schema: false)
+            : base("AccountConnectionDB", throwIfV1Schema: false)
         {
         }
 
