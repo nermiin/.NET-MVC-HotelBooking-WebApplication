@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Globalization;
+using System.Web.Mvc;
 
 namespace MACARENA.Controllers
 {
@@ -9,17 +10,21 @@ namespace MACARENA.Controllers
         {
             return View();
         }
-        [Route("about")]
+  
         public ActionResult About()
         {
             return View();
         }
-
-
-        [Route("turizm")]
+  
         public ActionResult Turizim()
         {
             return View();
+        }
+
+        public ActionResult ChangeCulture(string lang, string returnUrl)
+        {
+            Session["Culture"] = new CultureInfo(lang);
+            return Redirect(returnUrl);
         }
     }
 

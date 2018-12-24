@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MACARENA.Models
@@ -55,10 +56,10 @@ namespace MACARENA.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(MACARENA.Resources.lang))]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "RememberMe", ResourceType = typeof(MACARENA.Resources.lang))]
         public bool RememberMe { get; set; }
     }
 
@@ -72,14 +73,25 @@ namespace MACARENA.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(MACARENA.Resources.lang))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(MACARENA.Resources.lang))]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "FirstName", ResourceType = typeof(MACARENA.Resources.lang)),Required]
+        public string FirstName { get; set; }
+        
+        [Display(Name = "LastName", ResourceType = typeof(MACARENA.Resources.lang)),Required]
+        public string LastName { get; set; }
+
+        [Display(Name = "BirthDate", ResourceType = typeof(MACARENA.Resources.lang))]
+        public DateTime BirthDate { get; set; }
+       
     }
+
 
     public class ResetPasswordViewModel
     {
@@ -91,11 +103,11 @@ namespace MACARENA.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(Resources.lang))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(MACARENA.Resources.lang))]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
@@ -109,4 +121,5 @@ namespace MACARENA.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
 }

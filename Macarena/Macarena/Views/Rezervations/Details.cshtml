@@ -1,0 +1,59 @@
+﻿@model MACARENA.Models.Rezervation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rezervation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOutDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckOutDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdultNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdultNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildrenNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildrenNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RezervationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

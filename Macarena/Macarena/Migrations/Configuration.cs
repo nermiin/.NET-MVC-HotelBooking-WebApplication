@@ -13,11 +13,25 @@ namespace MACARENA.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
+
+
         }
 
         protected override void Seed(MACARENA.Models.ApplicationDbContext context)
         {
+
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+
            
+            
+
+
+            var adminUser = manager.FindByEmail("nermin@gmail.com");
+
+            manager.AddToRoles(adminUser.Id, new string[] { "SuperAdmin", "Admin" });
         }
     }
 }

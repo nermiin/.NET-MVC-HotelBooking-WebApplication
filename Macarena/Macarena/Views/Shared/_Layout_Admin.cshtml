@@ -21,11 +21,13 @@
 	@Styles.Render("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
 
 </head>
-<body>
-	@*@Html.Partial("_Header_Admin")*@
+<body><div class="container-fluid fixed-top position-fixed">
+	@Html.Partial("_Header_Admin")
+
+	@RenderBody()
+</div>
 	
-		@RenderBody()
-	
+
 
 	@Scripts.Render("~/Admin_Paneli/vendors/jquery/dist/jquery.min.js");
 	@Scripts.Render("~/Admin_Paneli/vendors/popper.js/dist/umd/popper.min.js");
