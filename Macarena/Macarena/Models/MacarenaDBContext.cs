@@ -16,10 +16,6 @@ namespace MACARENA
         // If you wish to target a different database and/or database provider, modify the 'MacarenaDBContext' 
         // connection string in the application configuration file.
 
-        public DbSet<Hotel> Hotels { get; set; }
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Rezervation> Rezervations { get; set; }
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 

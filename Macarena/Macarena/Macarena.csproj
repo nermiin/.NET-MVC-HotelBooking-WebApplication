@@ -2210,6 +2210,7 @@
     <Content Include="Content\css\contact_styles.css" />
     <Content Include="Content\css\elements_responsive.css" />
     <Content Include="Content\css\elements_styles.css" />
+    <Content Include="Content\css\FooterBottom.css" />
     <Content Include="Content\css\main_styles.css" />
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\services_responsive.css" />
@@ -3034,6 +3035,11 @@
     <Content Include="Views\Hotels\Details.cshtml" />
     <Content Include="Views\Hotels\Edit.cshtml" />
     <Content Include="Views\Hotels\Index.cshtml" />
+    <Content Include="Views\Admin\Blog.cshtml" />
+    <Content Include="Views\Admin\BlogDuzenle.cshtml" />
+    <Content Include="Views\Admin\BlogEkle.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -3109,6 +3115,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HomePage\Blog.cs" />
     <Compile Include="Resources\lang.tr.Designer.cs">
       <DependentUpon>lang.tr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -3127,10 +3134,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Booking\City.cs" />
-    <Compile Include="Models\HomePage\HomePage.cs" />
     <Compile Include="Models\Booking\Rezervation.cs" />
     <Compile Include="Models\Booking\Room.cs" />
-    <Compile Include="Models\HomePage\Slider.cs" />
     <Compile Include="Models\Booking\Hotel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MacarenaDB.cs" />
@@ -3166,7 +3171,6 @@
     <Content Include="Views\Shared\_Header_Account.cshtml" />
     <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Admin.cshtml" />
     <Content Include="Views\Shared\_Header_Admin.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
@@ -3185,7 +3189,6 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />

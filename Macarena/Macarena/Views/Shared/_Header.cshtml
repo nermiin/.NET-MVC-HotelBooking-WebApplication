@@ -16,6 +16,7 @@
 				<li>@Html.ActionLink(MACARENA.Resources.lang.HomePage, "Index", "Home")</li>
 				<li>@Html.ActionLink(MACARENA.Resources.lang.Tourism, "Turizim", "Home")</li>
 				<li>@Html.ActionLink(MACARENA.Resources.lang.About, "About", "Home")</li>
+				<li>@Html.ActionLink("Blog", "Blog", "Home")</li>
 				@if (Request.IsAuthenticated)
 				{
 					// Role Admin ise menüler gözüküyor //
@@ -40,26 +41,26 @@
 						<li>@Html.ActionLink(MACARENA.Resources.lang.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
 					</ul>
 				</li>
-			
-						<li class="dropdown">
-							@if (HttpContext.Current.Session["Culture"].ToString() == "en")
-							{
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">EN <span class="caret"></span></button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									<li>@Html.ActionLink("TR", "ChangeCulture", "Home", new { lang = "tr", returnurl = this.Request.RawUrl }, null)</li>
-								</ul>
-							}
-							else
-							{
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">EN <span class="caret"></span></button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									<li>@Html.ActionLink("TR", "ChangeCulture", "Home", new { lang = "tr", returnurl = this.Request.RawUrl }, null)</li>
-								</ul>
-							}
-						</li>
-					
-				
-			
+
+				<li class="dropdown">
+					@if (HttpContext.Current.Session["Culture"].ToString() == "en")
+					{
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">EN <span class="caret"></span></button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li>@Html.ActionLink("TR", "ChangeCulture", "Home", new { lang = "tr", returnurl = this.Request.RawUrl }, null)</li>
+						</ul>
+					}
+					else
+					{
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">EN <span class="caret"></span></button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li>@Html.ActionLink("TR", "ChangeCulture", "Home", new { lang = "tr", returnurl = this.Request.RawUrl }, null)</li>
+						</ul>
+					}
+				</li>
+
+
+
 			</ul>
 			@Html.Partial("_LoginPartial")
 		</nav>

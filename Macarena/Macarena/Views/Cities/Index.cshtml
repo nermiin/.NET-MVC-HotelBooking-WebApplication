@@ -1,34 +1,56 @@
 ﻿@model IEnumerable<MACARENA.Models.Booking.City>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout_Admin.cshtml";
 }
 
 <h2>Index</h2>
+<br />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ID)
-        </th>
-        <th></th>
-    </tr>
+<div class="table-responsive">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CityName }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CityName }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CityName })
-        </td>
-    </tr>
-}
+	<p>
+		@Html.ActionLink("Create New", "Create")
+	</p>
 
-</table>
+	<table class="table table-dark">
+
+		@if (Model.Count() == 0)
+		{
+			<tr>
+				<td colspan="10">No Record's found.</td>
+			</tr>
+		}
+		else
+		{
+			<thead>
+				<tr class="danger">
+					<th data-defaultsign="_19"> 	@Html.DisplayNameFor(model => model.ID)</th>
+					<th data-defaultsign="AZ">	@Html.DisplayNameFor(model => model.CityName)</th>
+
+				</tr>
+			</thead>
+		}
+		@foreach (var item in Model)
+		{
+			<thead>
+				<tr class="danger">
+					<th data-defaultsign="_19">
+						@Html.DisplayFor(modelItem => item.ID)
+					</th>
+					<th>
+						@Html.DisplayFor(modelItem => item.CityName)
+					</th>
+
+					<td>
+						@Html.ActionLink("Edit", "Edit", new { id = item.CityName }) |
+						@Html.ActionLink("Details", "Details", new { id = item.CityName }) |
+						@Html.ActionLink("Delete", "Delete", new { id = item.CityName })
+					</td>
+				</tr>
+			</thead>
+		}
+	</table>
+</div>
+

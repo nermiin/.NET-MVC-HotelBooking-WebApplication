@@ -1,58 +1,62 @@
 ﻿@model IEnumerable<MACARENA.Models.Rezervation>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
-
+<br />
+<br />
 <p>
-    @Html.ActionLink("Create New", "Create")
+	@Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CheckInDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CheckOutDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AdultNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChildrenNumber)
-        </th>
-        <th></th>
-    </tr>
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.RoomName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.CheckInDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.CheckOutDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.AdultNumber)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.ChildrenNumber)
+		</th>
+		<th></th>
+	</tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckInDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckOutDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AdultNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChildrenNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RezervationId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RezervationId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RezervationId })
-        </td>
-    </tr>
-}
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.RoomName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CheckInDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CheckOutDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.AdultNumber)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ChildrenNumber)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.RezervationId }) |
+				@Html.ActionLink("Details", "Details", new { id = item.RezervationId }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.RezervationId })
+			</td>
+		</tr>
+	}
 
 </table>
+<br />
+<br />

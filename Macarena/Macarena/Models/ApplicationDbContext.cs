@@ -9,6 +9,13 @@ namespace MACARENA.Models
         public ApplicationDbContext() : base("MacarenaDBContext", throwIfV1Schema: false)
         {
         }
+       
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Rezervation> Rezervations { get; set; }
+
+        public DbSet<Blog> Blog { get; set; }
       
 
         public static ApplicationDbContext Create()

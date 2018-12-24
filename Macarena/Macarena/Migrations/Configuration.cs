@@ -1,6 +1,7 @@
 namespace MACARENA.Migrations
 {
     using MACARENA.Models;
+    using MACARENA.Models.Booking;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
@@ -14,24 +15,18 @@ namespace MACARENA.Migrations
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-
-
         }
 
         protected override void Seed(MACARENA.Models.ApplicationDbContext context)
         {
 
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
 
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
 
-           
-            
+            //var adminUser = manager.FindByEmail("nermin@gmail.com");
 
-
-            var adminUser = manager.FindByEmail("nermin@gmail.com");
-
-            manager.AddToRoles(adminUser.Id, new string[] { "SuperAdmin", "Admin" });
+            //manager.AddToRoles(adminUser.Id, new string[] { "SuperAdmin", "Admin" });
         }
     }
 }

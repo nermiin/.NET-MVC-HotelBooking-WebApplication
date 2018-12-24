@@ -9,9 +9,9 @@ namespace MACARENA.Models
 {
     public class MacarenaDB:ApplicationDbContext
     {
-        public DbSet<Hotel> Hotels { get; set; }
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Rezervation> Rezervations { get; set; }
+        //public DbSet<Hotel> Hotels { get; set; }
+        //public DbSet<Room> Rooms { get; set; }
+        //public DbSet<City> Cities { get; set; }
+        //public DbSet<Rezervation> Rezervations { get; set; }
     }
 }
